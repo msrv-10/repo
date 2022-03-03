@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+@import "_header";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Bangers', cursive;
+    font-family: 'Roboto Mono', monospace;
+    background-color: #cad2c5;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: #84a98c;
+}
+/*FOOTER*/
+.footer{
+    background-color: #2f3e46;
+    height: 8vh;
+    .footer__copyright{
+        color: #84a98c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer__contact{
+        color: #84a98c;
+        text-decoration: none;
+        display: flex;
+        align-items: flex-end;
+        justify-content: right;
+    }
+    .footer__sizeinfo{
+        color: #84a98c;
+        display: flex;
+        align-items:flex-end;
+        justify-content: right;
+    }
+}
+/*PARALLAX*/
+.parallas, .main, .texto{margin:0 auto}
+
+.parallax{
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:  cover;
+	height:55rem;
+	max-width: 100%;
+	position: relative;
+    .texto-interior{
+        color:#fff;
+        font-size: 2rem;
+        font-weight: bold;
+        left: 10%;
+        position: absolute;
+        text-align: center;
+        top:40%;
+        width: 80%
+    }
+        
+    .img-uno{background-image: url(../images/pexels-jordan-hyde-1032110.jpg)}
+    
+    .img-dos{background-image:url(../images/pexels-mnz-1598505.jpg)}
+    
+    .img-tres{background-image:url(../images/pexels-ray-piedra-1478442.jpg)}
+    
+    .texto{
+        padding:5%;
+        width: 90%
+    }
+}
+/*NAV*/
+.nav{
+    background-color: #2f3e46;
+    height: 50px;
+    padding-bottom: 5px;
+    padding-left: 35%;
+    position: sticky;
+    top: 0%;
+    z-index: 2;
+    .nav__links{
+        list-style: none;
+        display: inline-block;
+        padding-left: 25px;
+        padding-top: 15px;
+    }
+    .nav__item{
+        display: inline-block;
+    }
+    .nav__link{
+        text-decoration: none;
+    }
+    .nav__link--active{
+        color: #84a98c;
+        border-bottom: 2px solid #84a98c;
+    }
+    .nav__search{
+        display: inline-block;
+        margin-left: 25px;
+    }
+    .nav__input{
+        height: 25px;
+        width: 35px;
+        border-radius: 15px;
+        transition: all 2s;
+    }
+    .nav__input:focus{
+        width: 250px;
+    }
+}

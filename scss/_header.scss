@@ -1,0 +1,14 @@
+/*HEADER*/
+.header{
+    display: flex;
+    background-color: #2f3e46;
+    height: 10vh;
+    align-items: center;
+    justify-content: left;
+    padding-left: 150px;
+    .header__title{
+        color: #84a98c;
+        font-family: 'Bangers', cursive;
+        font-size: 4vh;
+    }
+}
