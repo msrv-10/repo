@@ -1,0 +1,24 @@
+/*FOOTER*/
+.footer{
+    background-color: #2f3e46;
+    height: 8vh;
+    .footer__copyright{
+        color: #84a98c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer__contact{
+        color: #84a98c;
+        text-decoration: none;
+        display: flex;
+        align-items: flex-end;
+        justify-content: right;
+    }
+    .footer__sizeinfo{
+        color: #84a98c;
+        display: flex;
+        align-items:flex-end;
+        justify-content: right;
+    }
+}

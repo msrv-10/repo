@@ -1,0 +1,12 @@
+/*GRID*/
+.grid{
+    display: grid;
+    height: 75vh;
+    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 55px;
+}
+.grid img{
+    width: 100%;
+    object-fit: cover;
+}

@@ -1,0 +1,39 @@
+/*NAV*/
+.nav{
+    background-color: #2f3e46;
+    height: 50px;
+    padding-bottom: 5px;
+    padding-left: 35%;
+    position: sticky;
+    top: 0%;
+    z-index: 2;
+    .nav__links{
+        list-style: none;
+        display: inline-block;
+        padding-left: 25px;
+        padding-top: 15px;
+    }
+    .nav__item{
+        display: inline-block;
+    }
+    .nav__link{
+        text-decoration: none;
+    }
+    .nav__link--active{
+        color: #84a98c;
+        border-bottom: 2px solid #84a98c;
+    }
+    .nav__search{
+        display: inline-block;
+        margin-left: 25px;
+    }
+    .nav__input{
+        height: 25px;
+        width: 35px;
+        border-radius: 15px;
+        transition: all 2s;
+    }
+    .nav__input:focus{
+        width: 250px;
+    }
+}

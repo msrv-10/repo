@@ -1,0 +1,128 @@
+@media screen and (max-width: 1200px) {
+
+    .nav {
+        height: 12vh;
+    }
+    
+    .nav__links {
+        flex-direction:row-reverse;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav__items{
+        margin-top: 5px;
+    }
+    .main__iframe{
+        flex-direction:column-reverse;
+        align-items:flex-end;
+        justify-content:end;
+    }
+
+    .footer{
+        background-color: #2f3e46;
+        height: 10vh;
+    }
+    .footer__copyright{
+        color: #84a98c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer__contact{
+        color: #84a98c;
+        text-decoration: none;
+        display: flex;
+        align-items: flex-end;
+        justify-content: right;
+    }
+    .footer__sizeinfo{
+        color: #84a98c;
+        display: flex;
+        align-items:flex-end;
+        justify-content: right;
+    }
+}
+@media screen and (max-width: 600px) {
+
+    .nav {
+        height: 45vh;
+    }
+    
+    .nav__links {
+        flex-direction:row-reverse;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav__items{
+        margin-top: 5px;
+    }
+    .main__iframe{
+        flex-direction:column-reverse;
+        align-items:flex-end;
+        justify-content:end;
+    }
+
+    .footer {
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .grid{
+        display: grid;
+        height: 75vh;
+        width: 80%;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 55px;
+    }
+    .grid img{
+        width: 100%;
+        object-fit: cover;
+    }
+}
+@media screen and (max-width: 320px) {
+
+    .nav {
+        height: 50vh;
+    }
+    
+    .nav__links {
+        flex-direction:column;
+        list-style: none;
+        align-items: center;
+        
+    }
+
+    .nav__items{
+        margin-top: 5px;
+    }
+    .main__iframe{
+        flex-direction:column-reverse;
+        align-items:flex-end;
+        justify-content:end;
+    }
+
+    .footer {
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .grid{
+        display: grid;
+        height: 75vh;
+        width: 80%;
+        grid-template-columns: 1fr;
+        grid-gap: 55px;
+    }
+    .grid img{
+        width: 100%;
+        object-fit: cover;
+    }
+}

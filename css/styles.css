@@ -68,30 +68,7 @@ a:visited{
 .nav__input:focus{
     width: 250px;
 }
-/*MAIN CONTACT*/
-.main__contact{
-    background-color: #cad2c5;
-    height: 100vh;
-    text-align: center;
-    padding-top: 100px;
-}
-.main__titlecontact{
-    color: #2f3e46;
-    text-align: center;
-}
-.main__contactcontainer{
-    display: inline-block;
-    border: solid 2px #2f3e46;
-    text-align: center;
-    height: 50vh;
-    width: 50vh;
-}
-.contact__box{
-    padding-top: 20px;
-}
-.contact__box--color{
-    color: #cad2c5;
-}
+
 /*PARALLAX*/
 .parallas, .main, .texto{margin:0 auto}
 
