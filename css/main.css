@@ -32,6 +32,14 @@
     display: flex;
     align-items: flex-end;
     justify-content: right; }
+  .footer .footer__social {
+    display: inline-block;
+    justify-content: left;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px; }
+    .footer .footer__social:hover {
+      transform: scale(1.2); }
 
 /*NAV*/
 .nav {
@@ -313,3 +321,30 @@
 .grid img {
   width: 100%;
   object-fit: cover; }
+
+/*GENERALES*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Bangers', cursive;
+  font-family: 'Roboto Mono', monospace;
+  background-color: #cad2c5; }
+
+a {
+  text-decoration: none;
+  color: #84a98c; }
+
+a:visited {
+  color: #84a98c; }
+
+:hover.btn--facebook {
+  background-color: #3a5795; }
+
+:hover.btn--twitter {
+  background-color: #00acee; }
+
+:hover.btn--instagram {
+  background-color: #F77737; }

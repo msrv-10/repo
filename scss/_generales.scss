@@ -1,0 +1,29 @@
+/*GENERALES*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Bangers', cursive;
+    font-family: 'Roboto Mono', monospace;
+    background-color: #cad2c5;
+}
+a{
+    text-decoration: none;
+    color: #84a98c;
+}
+a:visited{
+    color: #84a98c;
+}
+//map
+$redes: (
+    facebook: #3a5795,
+    twitter: #00acee,
+    instagram: #F77737,
+);
+@each $red, $color in $redes {
+    &:hover.btn--#{$red} {
+        background-color: $color;
+    }
+}

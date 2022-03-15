@@ -21,4 +21,14 @@
         align-items:flex-end;
         justify-content: right;
     }
+    .footer__social {
+        display: inline-block;
+        justify-content: left;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px;
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
 }
