@@ -6,20 +6,4 @@
 @import "_main";
 @import "_mediaqueries";
 @import "_grid";
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    font-family: 'Bangers', cursive;
-    font-family: 'Roboto Mono', monospace;
-    background-color: #cad2c5;
-}
-a{
-    text-decoration: none;
-    color: #84a98c;
-}
-a:visited{
-    color: #84a98c;
-}
+@import "_generales";
