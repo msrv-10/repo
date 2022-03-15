@@ -16,14 +16,30 @@ a{
 a:visited{
     color: #84a98c;
 }
-//map
+//map & extend
 $redes: (
     facebook: #3a5795,
     twitter: #00acee,
     instagram: #F77737,
 );
+.icon-social {
+    padding: 0.5rem;
+}
 @each $red, $color in $redes {
     &:hover.btn--#{$red} {
         background-color: $color;
+        @extend .icon-social;
     }
+}
+//mixins
+@mixin header($display,$color,$height,$aling-items,$justify-content,$padding-left){
+    display: $display;
+    background-color: $color;
+    height: $height;
+    align-items: $aling-items;
+    justify-content: $justify-content;
+    padding-left: $padding-left;
+}
+.header{
+    @include header(flex,#2f3e46,10vh,center,left,150px)
 }
