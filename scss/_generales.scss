@@ -16,19 +16,15 @@ a{
 a:visited{
     color: #84a98c;
 }
-//map & extend
+//map
 $redes: (
     facebook: #3a5795,
     twitter: #00acee,
     instagram: #F77737,
 );
-.icon-social {
-    padding: 0.5rem;
-}
 @each $red, $color in $redes {
     &:hover.btn--#{$red} {
         background-color: $color;
-        @extend .icon-social;
     }
 }
 //mixins

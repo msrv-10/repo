@@ -342,9 +342,6 @@ a {
 a:visited {
   color: #84a98c; }
 
-.icon-social, .btn--facebook:hover, .btn--twitter:hover, .btn--instagram:hover {
-  padding: 0.5rem; }
-
 :hover.btn--facebook {
   background-color: #3a5795; }
 
