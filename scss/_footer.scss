@@ -2,6 +2,9 @@
 .footer{
     background-color: #2f3e46;
     height: 100px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
     .footer__copyright{
         color: #84a98c;
         display: flex;
