@@ -1,3 +1,4 @@
+@import "_variables";
 /*MAIN*/
 .card{
     background-color: #2f3e46;
@@ -19,6 +20,7 @@
     background-color: #52796f;
     text-align: center;
     border-radius: 50px;
+    margin-top: 15px;
 }
 .card__body{
     margin-top: 20px;
@@ -28,11 +30,11 @@
     height: auto;
 }
 .card--scale:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 .card__text{
     text-align:center;
-    color: #84a98c;
+    color: $color4;
 }
 .card__title{
     color: #2f3e46;

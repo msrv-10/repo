@@ -1,10 +1,12 @@
+@import "_mediaqueries";
 /*GRID*/
 .grid{
     display: grid;
     height: 75vh;
     width: 80%;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 30vh 30vh 30vh 30vh;
     grid-gap: 55px;
+    margin-left: 30vh;
 }
 .grid img{
     width: 100%;
