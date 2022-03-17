@@ -1,17 +1,5 @@
 @import "_variables";
 /*MAIN*/
-.card{
-    background-color: #2f3e46;
-    height: 300px;
-    width: 200px;
-    border: solid 5px #354f52;
-    border-radius: 20px;
-    margin-top: 15px;
-    display: inline-block;
-    margin-left: 15px;
-    margin-bottom: 15px;
-    transition: all 2s;
-}
 .card--relative{
     position: relative;
     z-index: 1;
@@ -24,15 +12,11 @@
 .card__body{
     margin-top: 20px;
 }
-.card__image{
-    width: 100%;
-    height: auto;
-}
 .card--scale:hover{
     transform: scale(1.2);
 }
 .card__text{
-    text-align:center;
+    text-align: justify;
     color: $color4;
 }
 .card__title{
