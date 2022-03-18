@@ -206,6 +206,14 @@
   margin-left: 80vh;
   margin-top: 30vh; }
 
+.btn {
+  background-color: #52796f;
+  border-color: #52796f;
+  margin-bottom: 10px; }
+
+.form-check-input {
+  background-color: #52796f; }
+
 /*GRID*/
 .grid {
   display: grid;
