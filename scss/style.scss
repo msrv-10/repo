@@ -75,6 +75,7 @@
         display: grid;
         grid-template-columns: 35vh 35vh;
         grid-gap: 15vh;
+        min-height: 170vh;
         .grid img{
             width: 100%;
             object-fit: cover;
@@ -107,6 +108,7 @@
         height: 75vh;
         grid-template-columns: 25vh 25vh;
         grid-gap: 15vh;
+        min-height: 200vh;
         .grid img{
             width: 100%;
             object-fit: cover;
@@ -129,10 +131,9 @@
 @media all and (max-width: 480px){
     .nav {
         height: 15vh;
-        padding: 0;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        justify-content: left;
         .nav__links {
             list-style: none;        
         }

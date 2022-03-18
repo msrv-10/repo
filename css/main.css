@@ -319,7 +319,8 @@ a:visited {
   .grid {
     display: grid;
     grid-template-columns: 35vh 35vh;
-    grid-gap: 15vh; }
+    grid-gap: 15vh;
+    min-height: 170vh; }
     .grid .grid img {
       width: 100%;
       object-fit: cover; }
@@ -345,7 +346,8 @@ a:visited {
     display: grid;
     height: 75vh;
     grid-template-columns: 25vh 25vh;
-    grid-gap: 15vh; }
+    grid-gap: 15vh;
+    min-height: 200vh; }
     .grid .grid img {
       width: 100%;
       object-fit: cover; }
@@ -361,10 +363,9 @@ a:visited {
 @media all and (max-width: 480px) {
   .nav {
     height: 15vh;
-    padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center; }
+    align-items: stretch;
+    justify-content: left; }
     .nav .nav__links {
       list-style: none; }
     .nav .nav__items {
