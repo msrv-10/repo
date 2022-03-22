@@ -137,7 +137,7 @@
   color: #2f3e46;
   text-align: center; }
 
-.main__iframe {
+.grid__iframe {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -245,14 +245,14 @@ a {
 a:visited {
   color: #84a98c; }
 
+:hover.btn--instagram {
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); }
+
 :hover.btn--facebook {
   background-color: #3a5795; }
 
 :hover.btn--twitter {
   background-color: #00acee; }
-
-:hover.btn--instagram {
-  background-color: #F77737; }
 
 .header {
   display: flex;
@@ -267,22 +267,26 @@ a:visited {
   min-height: 100vh; }
 
 @media all and (min-width: 1024px) and (max-width: 1280px) {
+  .body {
+    min-height: 150vh; }
   .nav {
-    height: 12vh; }
+    height: 10vh; }
   .nav__links {
+    display: flex;
     flex-direction: row-reverse;
     list-style: none;
     align-items: center;
     justify-content: center; }
   .nav__items {
     margin-top: 5px; }
-  .main__iframe {
+  .grid__iframe {
+    display: flex;
     flex-direction: column-reverse;
     align-items: flex-end;
     justify-content: end; }
   .footer {
     background-color: #2f3e46;
-    height: 10vh; }
+    height: 20vh; }
   .footer__copyright {
     color: #84a98c;
     display: flex;
@@ -301,6 +305,8 @@ a:visited {
     justify-content: right; } }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
+  .body {
+    min-height: 220vh; }
   .nav {
     height: 10vh;
     padding: 0;
@@ -312,7 +318,13 @@ a:visited {
       justify-content: center; }
     .nav .nav__items {
       margin-top: 5px; }
-  .main__iframe {
+    .nav .nav__input:focus {
+      width: 150px; }
+  .texto {
+    font-size: 1rem; }
+  .parallax .texto-interior {
+    font-size: 1.5rem; }
+  .grid__iframe {
     flex-direction: column-reverse;
     align-items: flex-end;
     justify-content: end; }
@@ -333,9 +345,13 @@ a:visited {
 
 @media all and (min-width: 480px) and (max-width: 768px) {
   .nav {
-    height: 15vh;
-    padding: 0;
-    position: relative; }
+    height: 35vh;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0%;
+    padding-left: 0%; }
     .nav .nav__links {
       flex-direction: column;
       list-style: none;
@@ -347,45 +363,68 @@ a:visited {
     height: 75vh;
     grid-template-columns: 25vh 25vh;
     grid-gap: 15vh;
-    min-height: 200vh; }
+    min-height: 200vh;
+    margin-left: 10vh; }
     .grid .grid img {
       width: 100%;
       object-fit: cover; }
-    .grid .main__iframe {
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: start; }
+    .grid .grid__iframe {
+      margin-bottom: 25vh;
+      width: 380px;
+      height: 180px; }
+    .grid .iframe--animation {
+      animation: none; }
   .parallax .texto-interior {
     font-size: 1.5rem; }
   .texto {
-    font-size: 1rem; } }
+    font-size: 1rem; }
+  .footer {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; } }
 
 @media all and (max-width: 480px) {
+  .header {
+    padding-left: 0;
+    justify-content: center; }
   .nav {
-    height: 15vh;
+    height: 35vh;
     display: flex;
-    align-items: stretch;
-    justify-content: left; }
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 0; }
     .nav .nav__links {
       list-style: none; }
     .nav .nav__items {
       margin-top: 5px; }
     .nav .nav__input:focus {
       width: 150px; }
-  .main__iframe {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    justify-content: stretch; }
   .grid {
     display: grid;
-    margin-left: 15px;
-    grid-template-columns: 25vh 25vh;
+    grid-template-columns: 25vh;
     grid-gap: 15vh;
-    min-height: 200vh; }
+    min-height: 320vh;
+    margin-left: 15vh; }
     .grid .grid img {
       width: 100%;
       object-fit: cover; }
+    .grid .grid__iframe {
+      margin-bottom: 35vh;
+      width: 300px;
+      height: 180px; }
+    .grid .iframe--animation {
+      animation: none; }
   .parallax .texto-interior {
     font-size: 1rem; }
   .texto {
-    font-size: 1rem; } }
+    font-size: 1rem; }
+  .footer {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; } }

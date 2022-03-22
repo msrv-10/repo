@@ -16,11 +16,13 @@ a{
 a:visited{
     color: #84a98c;
 }
+:hover.btn--instagram{
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
 //map
 $redes: (
     facebook: #3a5795,
     twitter: #00acee,
-    instagram: #F77737,
 );
 @each $red, $color in $redes {
     &:hover.btn--#{$red} {
