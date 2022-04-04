@@ -94,9 +94,13 @@
         grid-template-columns: 35vh 35vh;
         grid-gap: 15vh;
         min-height: 170vh;
+        margin-left: 5vh;
         .grid img{
             width: 100%;
             object-fit: cover;
+        }
+        .button{
+            margin-left: 13vh;
         }
     }
     .footer {
@@ -109,14 +113,13 @@
 }
 @media all and (min-width: 480px) and (max-width: 768px){
     .nav {
-        height: 35vh;
+        height: 40vh;
         display: flex;
         position: relative;
         flex-direction: column;
         align-items: flex-start;
         margin-left: 0%;
-        padding-left: 0%;
-        
+        padding-left: 0%;        
         .nav__links {
             flex-direction:column;
             list-style: none;
@@ -125,14 +128,17 @@
         .nav__items{
             margin-top: 5px;
         }
+        .nav__search{
+            margin-top: 10px;
+        }
     }    
     .grid{
         display: grid;
         height: 75vh;
         grid-template-columns: 25vh 25vh;
         grid-gap: 15vh;
-        min-height: 200vh;
-        margin-left: 10vh;
+        min-height: 250vh;
+        margin-left: 25vh;
         .grid img{
             width: 100%;
             object-fit: cover;
@@ -145,6 +151,9 @@
         .iframe--animation{
             animation: none;
         }
+        .button{
+            margin-left: 5vh;
+        }
     }
     .parallax{
         .texto-interior{
@@ -155,7 +164,7 @@
         font-size: 1rem;
     }
     .footer {
-        height: 25vh;
+        height: 30vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -168,7 +177,7 @@
         justify-content: center;
     }
     .nav {
-        height: 35vh;
+        height: 40vh;
         display: flex;
         position: relative;
         flex-direction: column;
@@ -189,8 +198,9 @@
         display: grid;
         grid-template-columns: 25vh;
         grid-gap: 15vh;
-        min-height: 320vh;
+        min-height: 430vh;
         margin-left: 15vh;
+        padding-left: 13vh;
         .grid img{
             width: 100%;
             object-fit: cover;
@@ -213,7 +223,7 @@
         font-size: 1rem;
     }
     .footer {
-        height: 25vh;
+        height: 40vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
