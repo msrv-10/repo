@@ -238,7 +238,8 @@
   font-size: 16px;
   margin-top: 20px;
   margin-left: 10vh;
-  cursor: pointer; }
+  cursor: pointer;
+  font-weight: bold; }
 
 .grid__label {
   font-size: 1.1rem;
@@ -411,6 +412,8 @@ a:visited {
       animation: none; }
     .grid .button {
       margin-left: 5vh; }
+    .grid .grid__label {
+      margin-left: 0.5vh; }
   .parallax .texto-interior {
     font-size: 1.5rem; }
   .texto {
