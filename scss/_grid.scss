@@ -25,3 +25,17 @@
     margin-left: 10vh;
     cursor: pointer;
 }
+.grid__label{
+    font-size: 1.1rem;
+    margin-left: 10vh;
+    color: $color4;
+}
+.grid__select{
+    background-color: $color1;
+    color: $color5;
+    border: none;
+}
+.grid__option{
+    background-color: $color3;
+    color: $color1;
+}

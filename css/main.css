@@ -240,6 +240,20 @@
   margin-left: 10vh;
   cursor: pointer; }
 
+.grid__label {
+  font-size: 1.1rem;
+  margin-left: 10vh;
+  color: #354f52; }
+
+.grid__select {
+  background-color: #cad2c5;
+  color: #2f3e46;
+  border: none; }
+
+.grid__option {
+  background-color: #52796f;
+  color: #cad2c5; }
+
 /*GENERALES*/
 * {
   margin: 0;
