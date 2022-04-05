@@ -229,17 +229,25 @@
 .box--transition:hover {
   width: 30vh;
   background-color: transparent;
-  border: 5px solid #2f3e46;
+  border: 2px solid #2f3e46;
   border-radius: 25px;
   margin-top: 10px; }
   .box--transition:hover .button {
     border-radius: 25px;
     background-color: #2f3e46;
-    color: #52796f; }
+    color: #52796f;
+    width: 300px;
+    margin: 15px 0 0 0;
+    display: flex;
+    text-align: center;
+    justify-content: center; }
   .box--transition:hover .card__title {
     border-radius: 25px;
     background-color: #2f3e46;
     color: #52796f; }
+  .box--transition:hover .card__text {
+    font-size: 0.9rem;
+    text-align: center; }
 
 .grid img {
   width: 100%;
