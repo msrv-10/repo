@@ -118,11 +118,6 @@
   position: relative;
   z-index: 1; }
 
-.card__header {
-  background-color: #52796f;
-  text-align: center;
-  margin-top: 15px; }
-
 .card__body {
   margin-top: 20px; }
 
@@ -135,12 +130,15 @@
 
 .card__title {
   color: #2f3e46;
-  text-align: center; }
+  text-align: center;
+  background-color: #52796f;
+  margin-top: 15px; }
 
 .grid__iframe {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-left: 43vh; }
 
 .iframe--animation {
   animation-name: animacion;
@@ -222,7 +220,26 @@
   grid-template-columns: 30vh 30vh 30vh 30vh;
   grid-gap: 55px;
   margin-left: 30vh;
-  min-height: 100vh; }
+  min-height: 120vh; }
+
+.grid__box {
+  border: 1px none #52796f;
+  transition: all 0.5s; }
+
+.box--transition:hover {
+  width: 30vh;
+  background-color: transparent;
+  border: 5px solid #2f3e46;
+  border-radius: 25px;
+  margin-top: 10px; }
+  .box--transition:hover .button {
+    border-radius: 25px;
+    background-color: #2f3e46;
+    color: #52796f; }
+  .box--transition:hover .card__title {
+    border-radius: 25px;
+    background-color: #2f3e46;
+    color: #52796f; }
 
 .grid img {
   width: 100%;
@@ -240,7 +257,8 @@
   margin-top: 20px;
   margin-left: 10vh;
   cursor: pointer;
-  font-weight: bold; }
+  font-weight: bold;
+  transition: all 1s; }
 
 .grid__label {
   font-size: 1.1rem;
@@ -408,7 +426,8 @@ a:visited {
     .grid .grid__iframe {
       margin-bottom: 25vh;
       width: 380px;
-      height: 180px; }
+      height: 180px;
+      margin-left: 15vh; }
     .grid .iframe--animation {
       animation: none; }
     .grid .button {
