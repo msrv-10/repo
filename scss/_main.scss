@@ -1,37 +1,5 @@
 @import "_variables";
 /*MAIN*/
-.card--relative{
-    position: relative;
-    z-index: 1;
-}
-.card__body{
-    margin-top: 20px;
-}
-.card--scale:hover{
-    transform: scale(1.2);
-}
-.card__text{
-    text-align: justify;
-    color: $color4;
-}
-.card__title{
-    color: #2f3e46;
-    text-align: center;
-    background-color: $color3;
-    margin-top: 15px;
-}
-.grid__iframe{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 43vh;
-}
-.iframe--animation{
-    animation-name: animacion;
-    animation-timing-function: ease;
-    animation-duration: 2s;
-    animation-delay: 1s;
-}
 .table--animation{
     animation-name: size;
     animation-timing-function: ease;
