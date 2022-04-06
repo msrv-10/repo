@@ -25,6 +25,15 @@
     .nav__items{
         margin-top: 5px;
     }
+    .grid{
+        min-height: 200vh;
+        .button{
+            margin-left: 7vh;
+        }
+        .grid__label{
+            margin-left: 0.5vh;
+        }
+    }
     .grid__iframe{
         display: flex;
         flex-direction:column-reverse;
@@ -100,7 +109,10 @@
             object-fit: cover;
         }
         .button{
-            margin-left: 13vh;
+            margin-left: 7vh;
+        }
+        .grid__label{
+            margin-left: 0.5vh;
         }
     }
     .footer {
@@ -153,7 +165,7 @@
             animation: none;
         }
         .button{
-            margin-left: 5vh;
+            margin-left: 7vh;
         }
         .grid__label{
             margin-left: 0.5vh;
@@ -202,7 +214,7 @@
         display: grid;
         grid-template-columns: 25vh;
         grid-gap: 15vh;
-        min-height: 490vh;
+        min-height: 505vh;
         margin-left: 10vh;
         padding-left: 5vh;
         .grid img{
@@ -217,6 +229,12 @@
         }
         .iframe--animation{
             animation: none;
+        }
+        .grid__label{
+            margin-left: 0.5vh;
+        }
+        .button{
+            margin-left: 7vh;
         }
     }
     .parallax{
