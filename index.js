@@ -7,17 +7,18 @@ if(nombre || contrasenia == true){
 }else{
     console.log("ingreso erroneo");
 } */
-let marca = promt("Ingrese la marca de su zapatilla");
+let marca = prompt("Ingrese la marca de su zapatilla");
 let modelo = prompt("Ingrese el modelo");
 function precioZapatilla(){
-    if (marca=="nike"||modelo=="air jordan"){
-        precio = (900);
-    }else if(marca=="adidas"||modelo=="yeezy"){
-        precio = (700);
-    }else if(marca=="nike"||modelo=="air force"){
-        precio = 500;
+    if (marca=="nike"&& modelo=="air jordan"){
+        precio = ("U$ 900");
+    }else if(marca=="adidas"&& modelo=="yeezy"){
+        precio = ("U$ 700");
+    }else if(marca=="nike"&& modelo=="air force"){
+        precio = ("U$ 500");
     }else{
         alert("Error de marca o modelo ingresado")
     }
 }
-precioZapatilla(precio);
+precioZapatilla();
+alert(precio);
