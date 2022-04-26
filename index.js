@@ -7,9 +7,9 @@ if(nombre || contrasenia == true){
 }else{
     console.log("ingreso erroneo");
 } */
-let marca = prompt("Ingrese la marca de su zapatilla");
-let modelo = prompt("Ingrese el modelo");
 function precioZapatilla(){
+    let marca = prompt("Ingrese la marca de su zapatilla");
+    let modelo = prompt("Ingrese el modelo");
     if (marca=="nike"&& modelo=="air jordan"){
         precio = ("U$ 900");
     }else if(marca=="adidas"&& modelo=="yeezy"){
@@ -21,4 +21,6 @@ function precioZapatilla(){
     }
 }
 precioZapatilla();
-alert(precio);
+alert(`Su precio es de ${precio}`);
+precioZapatilla();
+alert(`Su precio es de ${precio}`);
