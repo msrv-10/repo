@@ -13,7 +13,7 @@ while(continuarComprando == "si"){
       }
     continuarComprando = prompt("Desea seguir comprando?");
 }
-console.log(`el total es ${precio++} U$S`); */
+console.log(`el total es ${precio++} U$S`);
 function precioZapatilla(){
   let marca = prompt("Ingrese la marca de su zapatilla");
   let modelo = prompt("Ingrese el modelo");
@@ -30,4 +30,39 @@ function precioZapatilla(){
 precioZapatilla();
 alert(`Su precio es de ${precio}`);
 precioZapatilla();
-alert(`Su precio es de ${precio}`);
+alert(`Su precio es de ${precio}`); */
+// CARRITO NUEVO
+class Producto{
+  constructor(marca, modelo, precio){
+      this.marca =marca;
+      this.modelo=modelo;
+      this.precio=precio;
+  }
+  zapasElegidas(){
+    console.log(`La zapatilla elegida es marca: ${marcaZapas}, modelo: ${modeloZapas} `);
+  }
+}
+
+
+let marcaZapas = prompt('Ingrese la marca de la zapatilla');
+let modeloZapas = prompt('Ingrese el modelo de la zapatilla');
+
+const zapatilla1 = new Producto(marcaZapas, modeloZapas)
+zapatilla1.zapasElegidas();
+
+if(marcaZapas == "nike" && modeloZapas == "air force"){
+  precioZapas=125;
+}else if (marcaZapas == "nike" && modeloZapas == "air jordan"){
+  precioZapas = 150;
+}else if (marcaZapas == "adidas" && modeloZapas == "yeezy"){
+  precioZapas = 200;
+}else{
+  console.log("error, zapatilla no encontrada");
+}
+console.log(`el precio de su zapatilla es de ${precioZapas} U$S`);
+
+const miCompra = [
+  {marca: marcaZapas, modelo: modeloZapas, precio:precioZapas},
+]
+const total = miCompra.reduce((acum, el)=> acum +el.precio*1.21, 0);
+console.log(`Precio con i.v.a incluido ${total} U$S`);
