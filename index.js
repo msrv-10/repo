@@ -66,3 +66,10 @@ const miCompra = [
 ]
 const total = miCompra.reduce((acum, el)=> acum +el.precio*1.21, 0);
 console.log(`Precio con i.v.a incluido ${total} U$S`);
+
+let input = document.getElementById("input");
+let boton = document.getElementById("boton");
+
+boton.addEventListener("click", () => {
+    console.log(input.value);
+})
