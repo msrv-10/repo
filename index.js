@@ -39,37 +39,59 @@ class Producto{
       this.precio=precio;
   }
   zapasElegidas(){
-    console.log(`La zapatilla elegida es marca: ${marcaZapas}, modelo: ${modeloZapas} `);
+    console.log(`La zapatilla elegida es marca: ${marca}, modelo: ${modelo}, precio: ${precio}, el precio final es de: ${total} `);
   }
-}
+};
 
+const zapatillas = [
+  {id:1 ,marca: 'Nike', modelo: 'Air Force', precio: 150},
+  {id:2 ,marca: 'Nike', modelo: 'Air Uptempo', precio: 250},
+  {id:3 ,marca: 'Nike', modelo: 'Air Max 720', precio: 220},
+  {id:4 ,marca: 'Nike', modelo: 'Air Huarache', precio: 350},
+];
 
-let marcaZapas = prompt('Ingrese la marca de la zapatilla');
-let modeloZapas = prompt('Ingrese el modelo de la zapatilla');
+let seleccionarProducto = parseInt(prompt(`Bienvenido/a estos son nuestros productos, seleccione uno a continuacion por el numero de ID 'AL SELECCIONAR 0, SE CIERRA LA COMPRA': 
+    Zapatilla Marca:  ${zapatillas[0].marca}, Modelo: ${zapatillas[0].modelo}, Precio: ${zapatillas[0].precio} U$S, ID: ${zapatillas[0].id}
+    Zapatilla Marca:  ${zapatillas[1].marca}, Modelo: ${zapatillas[1].modelo}, Precio: ${zapatillas[1].precio} U$S, ID: ${zapatillas[1].id}
+    Zapatilla Marca:  ${zapatillas[2].marca}, Modelo: ${zapatillas[2].modelo}, Precio: ${zapatillas[2].precio} U$S, ID: ${zapatillas[2].id}
+    Zapatilla Marca:  ${zapatillas[3].marca}, Modelo: ${zapatillas[3].modelo}, Precio: ${zapatillas[3].precio} U$S, ID: ${zapatillas[3].id}
+`));
 
-const zapatilla1 = new Producto(marcaZapas, modeloZapas)
-zapatilla1.zapasElegidas();
-
-if(marcaZapas == "nike" && modeloZapas == "air force"){
-  precioZapas=125;
-}else if (marcaZapas == "nike" && modeloZapas == "air jordan"){
-  precioZapas = 150;
-}else if (marcaZapas == "adidas" && modeloZapas == "yeezy"){
-  precioZapas = 200;
+if(seleccionarProducto === 1){
+  productoSel=zapatillas[0];
+}else if(seleccionarProducto === 2){
+  productoSel=zapatillas[1]
+}else if(seleccionarProducto === 3){
+  productoSel=zapatillas[2]
+}else if(seleccionarProducto === 4){
+  productoSel=zapatillas[3]
 }else{
-  console.log("error, zapatilla no encontrada");
+  alert("ERROR AL SELECCIONAR PRODUCTO")
 }
-console.log(`el precio de su zapatilla es de ${precioZapas} U$S`);
+
+/* while(seleccionarProducto != 0){
+  seleccionarProducto = parseInt(prompt(`Bienvenido/a estos son nuestros productos, seleccione uno a continuacion por el numero de ID 'AL SELECCIONAR 0, SE CIERRA LA COMPRA': 
+  Zapatilla Marca:  ${zapatillas[0].marca}, Modelo: ${zapatillas[0].modelo}, Precio: ${zapatillas[0].precio} U$S, ID: ${zapatillas[0].id}
+  Zapatilla Marca:  ${zapatillas[1].marca}, Modelo: ${zapatillas[1].modelo}, Precio: ${zapatillas[1].precio} U$S, ID: ${zapatillas[1].id}
+  Zapatilla Marca:  ${zapatillas[2].marca}, Modelo: ${zapatillas[2].modelo}, Precio: ${zapatillas[2].precio} U$S, ID: ${zapatillas[2].id}
+  Zapatilla Marca:  ${zapatillas[3].marca}, Modelo: ${zapatillas[3].modelo}, Precio: ${zapatillas[3].precio} U$S, ID: ${zapatillas[3].id}
+`))
+} */
+/* console.log(seleccionarProducto); */
+//busca producto
+const zapaSeleccionada = zapatillas.find((elem)=> elem.id === seleccionarProducto);
+console.log(zapaSeleccionada);
+
+
 
 const miCompra = [
-  {marca: marcaZapas, modelo: modeloZapas, precio:precioZapas},
+  {productoSel},
 ]
 const total = miCompra.reduce((acum, el)=> acum +el.precio*1.21, 0);
-console.log(`Precio con i.v.a incluido ${total} U$S`);
-
-let input = document.getElementById("input");
+console.log(`Precio con i.v.a incluido ${total} U$S`); 
+/*  let input = document.getElementById("input");
 let boton = document.getElementById("boton");
 
 boton.addEventListener("click", () => {
     console.log(input.value);
-})
+}) */
