@@ -15,21 +15,18 @@ const zapatillas = [
 ];
 
 // contenedor por js
-for(const zapatilla of zapatillas) {
+/* for(const zapatilla of zapatillas) {
   let contenedor = document.createElement("div");
   contenedor.innerHTML= `<h3>ID: ${zapatilla.id}</h3>
                           <p> Marca: ${zapatilla.marca}</p>
                           <p> Modelo: ${zapatilla.modelo}</p>
                           <b> Precio: ${zapatilla.precio}</b>`;
   document.body.appendChild(contenedor)
-}
-
-
+} */
 
 const productoSeleccionado = [];
-let cantidadProductos = parseInt(
-  prompt("Ingrese la cantidad de productos a comprar")
-);
+let cantidadProductos = parseInt(prompt("Ingrese la cantidad de productos a comprar"));
+
 do {
   let productID = parseInt(
     prompt(`Bienvenido/a estos son nuestros productos, seleccione uno a continuacion por el numero de ID: 
@@ -46,7 +43,15 @@ do {
 
 
 const total = productoSeleccionado.reduce((acum, el)=> acum +el.precio*1.21, 0);
-console.log(`Precio con i.v.a incluido ${total} U$S`);
+//console.log(`Precio con i.v.a incluido ${total} U$S`);
+
+let productosFinales =document.createElement("p");
+productosFinales.innerHTML = `<h3>${JSON.stringify(productoSeleccionado)}</h3>`
+document.body.append(productosFinales)
+
+let precioFinal = document.createElement("p");
+precioFinal.innerHTML = `<h2>El precio final es de ${total} U$S</h2>`;
+document.body.append(precioFinal);
 
 let storage = (clave, valor) => {
   localStorage.setItem(clave, valor)
