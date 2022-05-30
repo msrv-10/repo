@@ -1,4 +1,6 @@
 // CARRITO NUEVO
+const carritoCompras = [];
+
 class Producto {
   constructor(marca, modelo, precio) {
     this.marca = marca;
@@ -15,62 +17,47 @@ const zapatillas = [
 ];
 
 // contenedor por js
-for(const zapatilla of zapatillas) {
+for (const zapatilla of zapatillas) {
   let contenedor = document.createElement("div");
-  contenedor.innerHTML= `<h3>ID: ${zapatilla.id}</h3>
+  contenedor.innerHTML = `<h3>ID: ${zapatilla.id}</h3>
                           <p> Marca: ${zapatilla.marca}</p>
                           <p> Modelo: ${zapatilla.modelo}</p>
-                          <b> Precio: ${zapatilla.precio}</b>`;
-  document.body.appendChild(contenedor)
+                          <b> Precio: ${zapatilla.precio}</b>
+                          <input type="button" id=${zapatilla.id} onClick=addItem(${zapatilla.id}) value="Agregar al carrito">`;
+  document.body.appendChild(contenedor);
 }
-
-for (const zapatilla of zapatillas){
-  
+let boton = document.getElementById(`${zapatillas.id}`);
+function addItem(boton) {
+  console.log(boton);
+  let productoSeleccionado = zapatillas.find((elem) => elem.id === boton);
+  carritoCompras.push(productoSeleccionado);
+  console.log(productoSeleccionado);
 }
-const productoSeleccionado = [];
+//console.log(carritoCompras);
 
-/* let cantidadProductos = parseInt(prompt("Ingrese la cantidad de productos a comprar"));
+const total = carritoCompras.reduce((acum, el) => acum + el.precio * 1.21, 0);
+console.log(`Precio con i.v.a incluido ${total} U$S`);
 
-do {
-  let productID = parseInt(
-    prompt(`Bienvenido/a estos son nuestros productos, seleccione uno a continuacion por el numero de ID: 
-  Zapatilla Marca:  ${zapatillas[0].marca}, Modelo: ${zapatillas[0].modelo}, Precio: ${zapatillas[0].precio} U$S, ID: ${zapatillas[0].id}
-  Zapatilla Marca:  ${zapatillas[1].marca}, Modelo: ${zapatillas[1].modelo}, Precio: ${zapatillas[1].precio} U$S, ID: ${zapatillas[1].id}
-  Zapatilla Marca:  ${zapatillas[2].marca}, Modelo: ${zapatillas[2].modelo}, Precio: ${zapatillas[2].precio} U$S, ID: ${zapatillas[2].id}
-  Zapatilla Marca:  ${zapatillas[3].marca}, Modelo: ${zapatillas[3].modelo}, Precio: ${zapatillas[3].precio} U$S, ID: ${zapatillas[3].id}
-`)
-  );
-  let zapaSeleccionada = zapatillas.find((elem)=> elem.id === productID);
-  productoSeleccionado.push(zapaSeleccionada);
-} while (productoSeleccionado.length != cantidadProductos); */
-/* console.log(productoSeleccionado); */
-
-
-const total = productoSeleccionado.reduce((acum, el)=> acum +el.precio*1.21, 0);
-//console.log(`Precio con i.v.a incluido ${total} U$S`);
-
-let productosFinales =document.createElement("p");
-productosFinales.innerHTML = `<h3>${JSON.stringify(productoSeleccionado)}</h3>`
-document.body.append(productosFinales)
+let productosFinales = document.createElement("p");
+productosFinales.innerHTML = `<h3>${JSON.stringify(carritoCompras)}</h3>`;
+document.body.append(productosFinales);
 
 let precioFinal = document.createElement("p");
 precioFinal.innerHTML = `<h2>El precio final es de ${total} U$S</h2>`;
 document.body.append(precioFinal);
 
 let storage = (clave, valor) => {
-  localStorage.setItem(clave, valor)
+  localStorage.setItem(clave, valor);
+};
+
+for (const producto of carritoCompras) {
+  storage(producto.id, JSON.stringify(producto));
 }
 
-for (const producto of productoSeleccionado){
-  storage(producto.id, JSON.stringify(producto))
-}
+localStorage.setItem("productos", JSON.stringify(carritoCompras));
 
-localStorage.setItem("productos", JSON.stringify(productoSeleccionado))
-
-let productStorage = localStorage.getItem('productos')
+let productStorage = localStorage.getItem("productos");
 console.log(JSON.parse(productStorage));
-
-
 
 /* const zapaSeleccionada = zapatillas.find((elem)=> elem.id === seleccionarProducto);
 console.log(zapaSeleccionada);
@@ -93,3 +80,22 @@ boton.addEventListener("click", () => {
 } else if (productID === 4) {
   productoSel = zapatillas[3];
 } */
+/* for (const zapatilla of zapatillas){
+  let addZapatilla = zapatillas.find((elem)=> elem.id === boton)
+} */
+
+/* let cantidadProductos = parseInt(prompt("Ingrese la cantidad de productos a comprar"));
+
+do {
+  let productID = parseInt(
+    prompt(`Bienvenido/a estos son nuestros productos, seleccione uno a continuacion por el numero de ID: 
+  Zapatilla Marca:  ${zapatillas[0].marca}, Modelo: ${zapatillas[0].modelo}, Precio: ${zapatillas[0].precio} U$S, ID: ${zapatillas[0].id}
+  Zapatilla Marca:  ${zapatillas[1].marca}, Modelo: ${zapatillas[1].modelo}, Precio: ${zapatillas[1].precio} U$S, ID: ${zapatillas[1].id}
+  Zapatilla Marca:  ${zapatillas[2].marca}, Modelo: ${zapatillas[2].modelo}, Precio: ${zapatillas[2].precio} U$S, ID: ${zapatillas[2].id}
+  Zapatilla Marca:  ${zapatillas[3].marca}, Modelo: ${zapatillas[3].modelo}, Precio: ${zapatillas[3].precio} U$S, ID: ${zapatillas[3].id}
+`)
+  );
+  let zapaSeleccionada = zapatillas.find((elem)=> elem.id === productID);
+  carritoCompras.push(zapaSeleccionada);
+} while (carritoCompras.length != cantidadProductos); */
+/* console.log(carritoCompras); */
