@@ -53,6 +53,9 @@
         font-size: 0.9rem;
         text-align: center;
     }
+    .grid__price{
+        font-size: 1.2rem;
+    }
 }
 .grid img{
     width: 100%;
@@ -106,4 +109,9 @@
     animation-timing-function: ease;
     animation-duration: 2s;
     animation-delay: 1s;
+}
+.grid__price{
+    color: $color3;
+    font-weight: bold;
+    margin-left: 10vh;
 }

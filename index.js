@@ -8,24 +8,28 @@ class Producto {
 }
 
 const zapatillas = [
-  { id: 1, marca: "Nike", modelo: "Air Force", precio: 150 },
-  { id: 2, marca: "Nike", modelo: "Air Uptempo", precio: 250 },
-  { id: 3, marca: "Nike", modelo: "Air Max 720", precio: 220 },
-  { id: 4, marca: "Nike", modelo: "Air Huarache", precio: 350 },
+  { id: 1, marca: "Adidas", modelo: "Boost Black", precio: 150 },
+  { id: 2, marca: "Adidas", modelo: "Harden B/E 3", precio: 250 },
+  { id: 3, marca: "Adidas", modelo: "Harden S3", precio: 220 },
+  { id: 4, marca: "Adidas", modelo: "B Black", precio: 350 },
 ];
 
 // contenedor por js
-/* for(const zapatilla of zapatillas) {
+for(const zapatilla of zapatillas) {
   let contenedor = document.createElement("div");
   contenedor.innerHTML= `<h3>ID: ${zapatilla.id}</h3>
                           <p> Marca: ${zapatilla.marca}</p>
                           <p> Modelo: ${zapatilla.modelo}</p>
                           <b> Precio: ${zapatilla.precio}</b>`;
   document.body.appendChild(contenedor)
-} */
+}
 
+for (const zapatilla of zapatillas){
+  
+}
 const productoSeleccionado = [];
-let cantidadProductos = parseInt(prompt("Ingrese la cantidad de productos a comprar"));
+
+/* let cantidadProductos = parseInt(prompt("Ingrese la cantidad de productos a comprar"));
 
 do {
   let productID = parseInt(
@@ -38,7 +42,7 @@ do {
   );
   let zapaSeleccionada = zapatillas.find((elem)=> elem.id === productID);
   productoSeleccionado.push(zapaSeleccionada);
-} while (productoSeleccionado.length != cantidadProductos);
+} while (productoSeleccionado.length != cantidadProductos); */
 /* console.log(productoSeleccionado); */
 
 

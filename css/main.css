@@ -204,6 +204,8 @@
   .box--transition:hover .grid__text {
     font-size: 0.9rem;
     text-align: center; }
+  .box--transition:hover .grid__price {
+    font-size: 1.2rem; }
 
 .grid img {
   width: 100%;
@@ -257,6 +259,11 @@
   animation-timing-function: ease;
   animation-duration: 2s;
   animation-delay: 1s; }
+
+.grid__price {
+  color: #52796f;
+  font-weight: bold;
+  margin-left: 10vh; }
 
 /*GENERALES*/
 * {
