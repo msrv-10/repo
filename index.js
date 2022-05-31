@@ -28,15 +28,12 @@ for (const zapatilla of zapatillas) {
 }
 let boton = document.getElementById(`${zapatillas.id}`);
 function addItem(boton) {
-  console.log(boton);
   let productoSeleccionado = zapatillas.find((elem) => elem.id === boton);
   carritoCompras.push(productoSeleccionado);
-  console.log(productoSeleccionado);
+  console.log(carritoCompras);
 }
-//console.log(carritoCompras);
 
 const total = carritoCompras.reduce((acum, el) => acum + el.precio * 1.21, 0);
-console.log(`Precio con i.v.a incluido ${total} U$S`);
 
 let productosFinales = document.createElement("p");
 productosFinales.innerHTML = `<h3>${JSON.stringify(carritoCompras)}</h3>`;
@@ -62,7 +59,7 @@ console.log(JSON.parse(productStorage));
 /* const zapaSeleccionada = zapatillas.find((elem)=> elem.id === seleccionarProducto);
 console.log(zapaSeleccionada);
 
-/* console.log(seleccionarProducto); */
+/* console.log(seleccionarProducto);
 //busca producto
 
 /*  let input = document.getElementById("input");
