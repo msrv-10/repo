@@ -15,7 +15,6 @@ const zapatillas = [
   { id: 3, marca: "Adidas", modelo: "Harden S3", precio: 220 },
   { id: 4, marca: "Adidas", modelo: "B Black", precio: 350 },
 ];
-
 // contenedor por js
 for (const zapatilla of zapatillas) {
   let contenedor = document.createElement("div");
@@ -27,8 +26,8 @@ for (const zapatilla of zapatillas) {
   document.body.appendChild(contenedor);
 }
 let boton = document.getElementById(`${zapatillas.id}`);
-function addItem(boton) {
-  let productoSeleccionado = zapatillas.find((elem) => elem.id === boton);
+function addItem(id) {
+  let productoSeleccionado = zapatillas.find((elem) => elem.id === id);
   carritoCompras.push(productoSeleccionado);
   console.log(carritoCompras);
 }
