@@ -2,10 +2,12 @@
 const carritoCompras = [];
 
 class Producto {
-  constructor(marca, modelo, precio) {
+  constructor(id, marca, modelo, precio, cantidad) {
+    this.id = id;
     this.marca = marca;
     this.modelo = modelo;
     this.precio = precio;
+    this.cantidad = cantidad;
   }
 }
 
@@ -25,13 +27,13 @@ for (const zapatilla of zapatillas) {
                           <input type="button" id=${zapatilla.id} onClick=addItem(${zapatilla.id}) value="Agregar al carrito">`;
   document.body.appendChild(contenedor);
 }
-let boton = document.getElementById(`${zapatillas.id}`);
-function addItem(id) {
-  let productoSeleccionado = zapatillas.find((elem) => elem.id === id);
-  let productoRepetido = carritoCompras.findIndex(elem => elem.id === id);
-  productoRepetido === -1 ? carritoCompras.push(productoSeleccionado) : carritoCompras[productoRepetido].cantidad = carritoCompras[productoRepetido].cantidad + 1;
-
-  const total = carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0);
+/* let boton = document.getElementById(`${zapatillas.id}`); */
+function addItem(boton) {
+  let productoSeleccionado = zapatillas.find((elem) => elem.id === boton);
+  let productoRepetido = carritoCompras.findIndex((elem) => elem.id === boton);
+  productoRepetido === -1 ? carritoCompras.push(productoSeleccionado) : (carritoCompras[productoRepetido].cantidad = carritoCompras[productoRepetido].cantidad + 1);
+  console.log(carritoCompras);
+  let total = carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0);
   let precioFinal = document.createElement("p");
   precioFinal.innerHTML = `<h2>El precio final es de ${total} U$S</h2>`;
   document.body.append(precioFinal);
@@ -39,10 +41,6 @@ function addItem(id) {
   productosFinales.innerHTML = `<h3>${JSON.stringify(carritoCompras)}</h3>`;
   document.body.append(productosFinales);
 }
-
-
-
-
 
 
 
