@@ -10,10 +10,10 @@ class Producto {
 }
 
 const zapatillas = [
-  { id: 1, marca: "Adidas", modelo: "Boost Black", precio: 150 },
-  { id: 2, marca: "Adidas", modelo: "Harden B/E 3", precio: 250 },
-  { id: 3, marca: "Adidas", modelo: "Harden S3", precio: 220 },
-  { id: 4, marca: "Adidas", modelo: "B Black", precio: 350 },
+  { id: 1, marca: "Adidas", modelo: "Boost Black", precio: 150, cantidad: 1 },
+  { id: 2, marca: "Adidas", modelo: "Harden B/E 3", precio: 250, cantidad: 1 },
+  { id: 3, marca: "Adidas", modelo: "Harden S3", precio: 220, cantidad: 1 },
+  { id: 4, marca: "Adidas", modelo: "B Black", precio: 350, cantidad: 1 },
 ];
 // contenedor por js
 for (const zapatilla of zapatillas) {
@@ -28,21 +28,26 @@ for (const zapatilla of zapatillas) {
 let boton = document.getElementById(`${zapatillas.id}`);
 function addItem(id) {
   let productoSeleccionado = zapatillas.find((elem) => elem.id === id);
-  carritoCompras.push(productoSeleccionado);
-  console.log(carritoCompras);
+  let productoRepetido = carritoCompras.findIndex(elem => elem.id === id);
+  productoRepetido === -1 ? carritoCompras.push(productoSeleccionado) : carritoCompras[productoRepetido].cantidad = carritoCompras[productoRepetido].cantidad + 1;
+
+  const total = carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0);
+  let precioFinal = document.createElement("p");
+  precioFinal.innerHTML = `<h2>El precio final es de ${total} U$S</h2>`;
+  document.body.append(precioFinal);
+  let productosFinales = document.createElement("p");
+  productosFinales.innerHTML = `<h3>${JSON.stringify(carritoCompras)}</h3>`;
+  document.body.append(productosFinales);
 }
 
-const total = carritoCompras.reduce((acum, el) => acum + el.precio * 1.21, 0);
 
-let productosFinales = document.createElement("p");
-productosFinales.innerHTML = `<h3>${JSON.stringify(carritoCompras)}</h3>`;
-document.body.append(productosFinales);
 
-let precioFinal = document.createElement("p");
-precioFinal.innerHTML = `<h2>El precio final es de ${total} U$S</h2>`;
-document.body.append(precioFinal);
 
-let storage = (clave, valor) => {
+
+
+
+
+/* let storage = (clave, valor) => {
   localStorage.setItem(clave, valor);
 };
 
@@ -54,7 +59,7 @@ localStorage.setItem("productos", JSON.stringify(carritoCompras));
 
 let productStorage = localStorage.getItem("productos");
 console.log(JSON.parse(productStorage));
-
+ */
 /* const zapaSeleccionada = zapatillas.find((elem)=> elem.id === seleccionarProducto);
 console.log(zapaSeleccionada);
 
