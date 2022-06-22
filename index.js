@@ -44,7 +44,15 @@ localStorage.setItem("productos", JSON.stringify(carritoCompras));
 
 
  */
+
 function addItem(id) {
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Tu producto ha sido agregado correctamente',
+    showConfirmButton: false,
+    timer: 1500
+  })
   let productoSeleccionado = zapatillas.find((elem) => elem.id === id);
   let productoRepetido = carritoCompras.findIndex((elem) => elem.id === id);
   productoRepetido === -1 ? carritoCompras.push(productoSeleccionado) : (carritoCompras[productoRepetido].cantidad = carritoCompras[productoRepetido].cantidad + 1);
@@ -52,16 +60,17 @@ function addItem(id) {
   let productosFinales = document.createElement("p");
   productosFinales.innerHTML = `<h3>${JSON.stringify(productoSeleccionado)}</h3>`;
   document.body.append(productosFinales);
-/*   let storage = (clave, valor) => {
-    localStorage.setItem(clave, valor);
-  };  
-  for (const producto of carritoCompras) {
-    storage(producto.id, JSON.stringify(producto));
-  }   */
   localStorage.setItem("productos", JSON.stringify(carritoCompras)); 
 }
 
 function removeItem(borrar){
+  Swal.fire({
+    position: 'center',
+    icon: 'warning',
+    title: 'Tu producto ha sido removido correctamente',
+    showConfirmButton: false,
+    timer: 1500
+  })
   let productDelete = zapatillas.find((elem) => elem.id === borrar);
   let productRepeat = carritoCompras.findIndex((elem) => elem.id === borrar);
   productRepeat === -1 ? carritoCompras.pop(productDelete) : (carritoCompras[productRepeat].cantidad = carritoCompras[productRepeat].cantidad - 1);  
@@ -83,6 +92,11 @@ function removeItem(borrar){
 
 function showTotal(){
   /* let total = carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0); */
+  Swal.fire({
+    imageUrl: 'https://placeholder.pics/svg/300x1500',
+    imageHeight: 1500,
+    imageAlt: 'A tall image'
+  })
   let productStorage = localStorage.getItem("productos");
   console.log(productStorage);
   localStorage != carritoCompras ? total = JSON.parse(productStorage).reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0) : carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0);
