@@ -34,18 +34,31 @@ contenedorTotal.innerHTML = `<input type= "button" class="button button--transit
 document.body.appendChild(contenedorTotal);
 
 
+/* let storage = (clave, valor) => {
+  localStorage.setItem(clave, valor);
+};  
+for (const producto of carritoCompras) {
+  storage(producto.id, JSON.stringify(producto));
+}  
+localStorage.setItem("productos", JSON.stringify(carritoCompras));  
+
+
+ */
 function addItem(id) {
   let productoSeleccionado = zapatillas.find((elem) => elem.id === id);
   let productoRepetido = carritoCompras.findIndex((elem) => elem.id === id);
   productoRepetido === -1 ? carritoCompras.push(productoSeleccionado) : (carritoCompras[productoRepetido].cantidad = carritoCompras[productoRepetido].cantidad + 1);
   console.log(carritoCompras);
-  /* let total = carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0);
-  let precioFinal = document.createElement("p");
-  precioFinal.innerHTML = `<h2>El precio final es de ${total} U$S</h2>`;
-  document.body.append(precioFinal);
   let productosFinales = document.createElement("p");
-  productosFinales.innerHTML = `<h3>${JSON.stringify(carritoCompras)}</h3>`;
-  document.body.append(productosFinales); */
+  productosFinales.innerHTML = `<h3>${JSON.stringify(productoSeleccionado)}</h3>`;
+  document.body.append(productosFinales);
+/*   let storage = (clave, valor) => {
+    localStorage.setItem(clave, valor);
+  };  
+  for (const producto of carritoCompras) {
+    storage(producto.id, JSON.stringify(producto));
+  }   */
+  localStorage.setItem("productos", JSON.stringify(carritoCompras)); 
 }
 
 function removeItem(borrar){
@@ -53,21 +66,32 @@ function removeItem(borrar){
   let productRepeat = carritoCompras.findIndex((elem) => elem.id === borrar);
   productRepeat === -1 ? carritoCompras.pop(productDelete) : (carritoCompras[productRepeat].cantidad = carritoCompras[productRepeat].cantidad - 1);  
   console.log(carritoCompras);
-  /* let itemBorrado = document.createElement("p");
+  let itemBorrado = document.createElement("p");
   itemBorrado.innerHTML = `<h2>Se restan ${productDelete.precio} U$S</h2>`;
   document.body.append(itemBorrado);
   let deletedElement = document.createElement("p");
   deletedElement.innerHTML = `<h3>${JSON.stringify(productDelete)}</h3>`;
-  document.body.append(deletedElement); */
+  document.body.append(deletedElement);
+/*   let storage = (clave, valor) => {
+    localStorage.setItem(clave, valor);
+  };  
+  for (const producto of carritoCompras) {
+    storage(producto.id, JSON.stringify(producto));
+  }   */
+  localStorage.setItem("productos", JSON.stringify(carritoCompras)); 
 }
 
 function showTotal(){
-  let total = carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0);
+  /* let total = carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0); */
+  let productStorage = localStorage.getItem("productos");
+  console.log(productStorage);
+  localStorage != carritoCompras ? total = JSON.parse(productStorage).reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0) : carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0);
   let precioFinal = document.createElement("p");
   precioFinal.innerHTML = `<h2>El precio final es de ${total} U$S</h2>`;
   document.body.append(precioFinal);
+  
 }
-
+/* let productStorage = localStorage.getItem("productos"); */
 
 
 
