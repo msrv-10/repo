@@ -24,23 +24,61 @@ for (const zapatilla of zapatillas) {
                           <p> Marca: ${zapatilla.marca}</p>
                           <p> Modelo: ${zapatilla.modelo}</p>
                           <b> Precio: ${zapatilla.precio}</b>
-                          <input type="button" id=${zapatilla.id} onClick=addItem(${zapatilla.id}) value="Agregar al carrito">`;
+                          <input type= "button" class="button button--transition" onClick=addItem(${zapatilla.id}) value="Agregar al carrito">
+                          <input type= "button" class="button button--transition" onClick=removeItem(${zapatilla.id}) ${zapatilla.cantidad < 1 ? 'disabled' : ''} value="Remover del carrito">`;
   document.body.appendChild(contenedor);
 }
-/* let boton = document.getElementById(`${zapatillas.id}`); */
-function addItem(boton) {
-  let productoSeleccionado = zapatillas.find((elem) => elem.id === boton);
-  let productoRepetido = carritoCompras.findIndex((elem) => elem.id === boton);
+
+let contenedorTotal = document.createElement("div");
+contenedorTotal.innerHTML = `<input type= "button" class="button button--transition" onClick=showTotal() value="Total">`;
+document.body.appendChild(contenedorTotal);
+
+
+function addItem(id) {
+  let productoSeleccionado = zapatillas.find((elem) => elem.id === id);
+  let productoRepetido = carritoCompras.findIndex((elem) => elem.id === id);
   productoRepetido === -1 ? carritoCompras.push(productoSeleccionado) : (carritoCompras[productoRepetido].cantidad = carritoCompras[productoRepetido].cantidad + 1);
   console.log(carritoCompras);
-  let total = carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0);
+  /* let total = carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0);
   let precioFinal = document.createElement("p");
   precioFinal.innerHTML = `<h2>El precio final es de ${total} U$S</h2>`;
   document.body.append(precioFinal);
   let productosFinales = document.createElement("p");
   productosFinales.innerHTML = `<h3>${JSON.stringify(carritoCompras)}</h3>`;
-  document.body.append(productosFinales);
+  document.body.append(productosFinales); */
 }
+
+function removeItem(borrar){
+  let productDelete = zapatillas.find((elem) => elem.id === borrar);
+  let productRepeat = carritoCompras.findIndex((elem) => elem.id === borrar);
+  productRepeat === -1 ? carritoCompras.pop(productDelete) : (carritoCompras[productRepeat].cantidad = carritoCompras[productRepeat].cantidad - 1);  
+  console.log(carritoCompras);
+  /* let itemBorrado = document.createElement("p");
+  itemBorrado.innerHTML = `<h2>Se restan ${productDelete.precio} U$S</h2>`;
+  document.body.append(itemBorrado);
+  let deletedElement = document.createElement("p");
+  deletedElement.innerHTML = `<h3>${JSON.stringify(productDelete)}</h3>`;
+  document.body.append(deletedElement); */
+}
+
+function showTotal(){
+  let total = carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0);
+  let precioFinal = document.createElement("p");
+  precioFinal.innerHTML = `<h2>El precio final es de ${total} U$S</h2>`;
+  document.body.append(precioFinal);
+}
+
+
+
+
+/* let total = carritoCompras.reduce((acum, el) => acum + el.precio * el.cantidad * 1.21, 0);
+
+let contenedorTotal = document.createElement("div");
+contenedorTotal.innerHTML = `<h2>Total: ${total} U$S</h2>`;
+document.body.appendChild(contenedorTotal); */
+
+
+
 
 
 
